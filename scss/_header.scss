@@ -1,17 +1,21 @@
 /*  --- HEADER ---  */
 .header {
-    padding: 12px 0;
-    max-height: 100px;
+    padding: calc(var(--gutter-x) / 2) calc(var(--gutter-y) / 2);
 
     &-inner {
-        display: flex;
-        gap: var(--gutter-x);
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        grid-template-areas:
+            "logo address"
+            "logo timetable";
+        gap:  var(--gutter-y) var(--gutter-x);
         align-items: center;
-        justify-content: space-around;
     }
 
     &-social {
-        display: flex;
+       grid-area: social; 
+        // display: flex;
+        display: none;
         gap: calc(var(--gutter-x) / 2);
         align-items: center;
 
@@ -31,6 +35,8 @@
     }
 
     &__phone {
+        grid-area: phone;
+        display: none;
         border: 2px solid var(--black);
         padding: 7px 14px;
         border-radius: 20px;
@@ -40,9 +46,22 @@
             color: var(--white);
         }
     }
+    &__address {
+        grid-area: address;
+        text-align: center;
+        span {
+            font-size: .9em;
+          }
+    }
+    
+    &__timetable {
+        grid-area: timetable;
+        text-align: center;
+    }
 }
 
 .logo {
+    grid-area: logo;
     &__link {
         display: inline-block;
         text-align: center;
@@ -111,6 +130,7 @@
             &,
             &::before,
             &::after {
+                content: "";
                 position: absolute;
                 width: 35px;
                 height: 2px;

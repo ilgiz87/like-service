@@ -1,0 +1,136 @@
+/*  --- HEADER ---  */
+.header {
+    padding: 12px 0;
+    max-height: 100px;
+
+    &-inner {
+        display: flex;
+        gap: var(--gutter-x);
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &-social {
+        display: flex;
+        gap: calc(var(--gutter-x) / 2);
+        align-items: center;
+
+
+        &__link {
+            display: block;
+            background: var(--black);
+            border-radius: 50%;
+
+        }
+
+        &__icon {
+            display: block;
+            margin: 5px;
+        }
+
+    }
+
+    &__phone {
+        border: 2px solid var(--black);
+        padding: 7px 14px;
+        border-radius: 20px;
+
+        &:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+    }
+}
+
+.logo {
+    &__link {
+        display: inline-block;
+        text-align: center;
+
+    }
+
+    &__text {
+        color: var(--primary);
+        margin: 0;
+
+        span {
+            color: var(--secondary);
+        }
+    }
+
+    &__img {
+        max-height: 55px;
+        min-height: 30px;
+    }
+}
+
+.top-menu {
+    background-color: var(--primary);
+    color: var(--white);
+
+    &__list {
+        width: 100%;
+        display: none;
+
+        @media (min-width: 992px) {
+            display: flex;
+            justify-content: center;
+
+        }
+    }
+
+    &__link {
+
+
+        @media (min-width: 992px) {
+            display: inline-block;
+            padding: calc(var(--gutter-x) / 2) var(--gutter-x);
+            border-bottom: 2px solid transparent;
+            transition: .5s all;
+
+            &:hover {
+                background: var(--white);
+                color: var(--black);
+                border-bottom-color: var(--secondary);
+            }
+        }
+    }
+
+    &__btn {
+        position: relative;
+        display: block;
+        height: 40px;
+        width: 40px;
+        margin-left: auto;
+
+        span {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &,
+            &::before,
+            &::after {
+                position: absolute;
+                width: 35px;
+                height: 2px;
+                display: block;
+                background: #fff;
+                border-radius: 1px;
+            }
+
+
+
+            &::before {
+                top: -6px;
+            }
+
+            &::after {
+                top: 6px;
+            }
+
+        }
+    }
+}
+
+/*  --- HEADER-end ---  */

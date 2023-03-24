@@ -3,6 +3,7 @@ body {
     height: 100%;
     box-sizing: border-box;
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -14,26 +15,27 @@ body {
     color: var(--color);
     background-color: var(--bg-color);
 }
+
 main {
     flex-grow: 1;
 }
+
 *,
 *::after,
 *::before {
     box-sizing: inherit;
 }
-*::after,
-*::before {
-    content: "";
-}
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
 address {
     font-style: inherit;
     font-size: inherit;
-  }
+}
+
 button {
     background: transparent;
     cursor: pointer;
@@ -56,11 +58,8 @@ nav ul {
     margin: 0;
     padding: 0;
 }
-.container {
-    --gutter-x: 1.5rem;
-    --gutter-y: 0;
-    --container-width: 100%;
 
+.container {
     max-width: var(--container-width);
     padding-right: calc(var(--gutter-x) * .5);
     padding-left: calc(var(--gutter-x) * .5);
@@ -78,7 +77,6 @@ nav ul {
 
     @media (min-width:992px) {
         --container-width: 960px;
-
     }
 
     @media (min-width:1200px) {

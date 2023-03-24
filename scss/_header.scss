@@ -1,19 +1,40 @@
 /*  --- HEADER ---  */
 .header {
-    padding: 12px 0;
-    max-height: 100px;
-
+    padding-top:calc(var(--gutter-x) / 2) ;
+    padding-right: calc(var(--gutter-y) / 2);
+    padding-bottom: calc(var(--gutter-x) / 2);
+    padding-left: calc(var(--gutter-y) / 2);
     &-inner {
-        display: flex;
-        gap: var(--gutter-x);
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        grid-template-areas:
+            "logo address"
+            "logo timetable";
         align-items: center;
-        justify-content: space-around;
+
+        @media (min-width:576px) {
+            grid-template-columns: 92px 3fr 2fr;
+            grid-template-areas:
+                "logo address social"
+                "logo timetable phone";
+        }
+
+        @media (min-width:992px) {
+            display: flex;
+            justify-content: space-evenly;
+        }
     }
 
     &-social {
-        display: flex;
-        gap: calc(var(--gutter-x) / 2);
-        align-items: center;
+        grid-area: social;
+        display: none;
+
+        @media (min-width:576px) {
+            display: flex;
+            gap: calc(var(--gutter-x) / 2);
+            align-items: center;
+            justify-content: center;
+        }
 
 
         &__link {
@@ -31,18 +52,51 @@
     }
 
     &__phone {
-        border: 2px solid var(--black);
-        padding: 7px 14px;
-        border-radius: 20px;
+        grid-area: phone;
+        display: none;
+        border: .08em solid var(--black);
+        padding: .37em .75em;
+        border-radius: 1em;
+        font-size: .825rem;
 
         &:hover {
             background: var(--black);
             color: var(--white);
         }
+
+        @media (min-width:576px) {
+            display: inline-block;
+            text-align: center;
+            min-width: 100px;
+            margin: 0 auto;
+        }
+
+        @media (min-width:992px) {
+            margin: 0;
+            font-size: 1rem;
+        }
+    }
+
+    &__address {
+        grid-area: address;
+        text-align: center;
+        font-size: 14px;
+
+        span {
+            font-size: .9em;
+        }
+    }
+
+    &__timetable {
+        grid-area: timetable;
+        text-align: center;
+        font-size: 14px;
     }
 }
 
 .logo {
+    grid-area: logo;
+
     &__link {
         display: inline-block;
         text-align: center;
@@ -111,6 +165,7 @@
             &,
             &::before,
             &::after {
+                content: "";
                 position: absolute;
                 width: 35px;
                 height: 2px;

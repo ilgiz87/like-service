@@ -1,9 +1,10 @@
 /*  --- HEADER ---  */
 .header {
-    padding-top:calc(var(--gutter-x) / 2) ;
+    padding-top: calc(var(--gutter-x) / 2);
     padding-right: calc(var(--gutter-y) / 2);
     padding-bottom: calc(var(--gutter-x) / 2);
     padding-left: calc(var(--gutter-y) / 2);
+
     &-inner {
         display: grid;
         grid-template-columns: 92px 1fr;
@@ -129,7 +130,6 @@
         @media (min-width: 992px) {
             display: flex;
             justify-content: center;
-
         }
     }
 
@@ -156,6 +156,10 @@
         height: 40px;
         width: 40px;
         margin-left: auto;
+
+        @media (min-width:992px) {
+            display: none
+        }
 
         span {
             top: 50%;

@@ -275,6 +275,11 @@ nav ul {
   width: 40px;
   margin-left: auto;
 }
+@media (min-width: 992px) {
+  .top-menu__btn {
+    display: none;
+  }
+}
 .top-menu__btn span {
   top: 50%;
   left: 50%;
